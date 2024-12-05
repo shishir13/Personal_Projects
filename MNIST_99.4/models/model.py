@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+# Trigger workflow
 class FastMNIST(nn.Module):
     """
     A lightweight CNN for MNIST digit classification.
