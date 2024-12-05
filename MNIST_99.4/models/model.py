@@ -12,7 +12,7 @@ class FastMNIST(nn.Module):
     - BatchNorm after each conv
     - MaxPool after each block
     - 2 FC layers (32 neurons in hidden layer)
-    - Dropout (0.3) for regularization
+    - Dropout (0.4) for regularization
     
     Total Parameters: 15,578
     """
@@ -32,7 +32,7 @@ class FastMNIST(nn.Module):
         self.fc1 = nn.Linear(32 * 3 * 3, 32)
         self.fc2 = nn.Linear(32, 10)
         
-        self.dropout = nn.Dropout(0.3)
+        self.dropout = nn.Dropout(0.4)
         
     def forward(self, x):
         x = self.conv1(x)

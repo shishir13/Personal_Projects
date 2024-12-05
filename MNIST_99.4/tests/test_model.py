@@ -1,4 +1,5 @@
 import pytest
+import torch
 from models.model import FastMNIST
 
 @pytest.fixture
@@ -31,7 +32,8 @@ def test_batch_norm_layers(model):
 def test_dropout_layer(model):
     """Test that dropout layer is present with correct rate."""
     assert hasattr(model, 'dropout'), "Model missing dropout layer"
-    assert model.dropout.p == 0.4, f"Expected dropout rate 0.4, got {model.dropout.p}"
+    dropout_rate = model.dropout.p
+    assert dropout_rate == 0.4, f"Expected dropout rate 0.4, got {dropout_rate}"
 
 def test_conv_layers(model):
     """Test convolutional layers configuration."""
