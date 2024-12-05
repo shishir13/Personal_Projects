@@ -38,10 +38,10 @@ jobs:
     - name: Verify model architecture
       run: |
         python -c "
-        from models.model import MNISTModel
+        from models.model import FastMNIST
         from utils import count_parameters, has_batch_norm, has_dropout, has_fully_connected
         
-        model = MNISTModel()
+        model = FastMNIST()
         
         # Check parameters count
         assert count_parameters(model) <= 20000, 'Model exceeds 20k parameters'
