@@ -1,10 +1,10 @@
 import pytest
 import torch
-from models.model import MNISTModel
+from models.model import FastMNIST
 
 @pytest.fixture
 def model():
-    return MNISTModel()
+    return FastMNIST()
 
 def test_model_structure(model):
     """Test the model structure and parameter count."""
